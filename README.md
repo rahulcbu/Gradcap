@@ -1,35 +1,37 @@
-# Simple Django App
-This is a simple Django app that demonstrates the basics of Django development. The app has a single page that displays a list of users.
+# Graduation Students List 2024
 
-### Getting Started
-To get started with this app, you will need to have Python and Django installed. Once you have Python and Django installed, you can clone this repository and install the dependencies:
-```bash
-git clone https://github.com/andrew-anter/webapp-django.git
-cd webapp-django
-pip install -r requirements.txt
-```
+Welcome to the Graduation Students List 2024 project! This project displays a list of graduation students along with their details in an aesthetically pleasing way.
 
 
-### Running the App
+## Features
 
-To run the app, you can use the following command:
+- Responsive and visually appealing display of graduation students list.
+- Inclusion of company logo and additional images for a richer experience.
+- Venue details included at the end of the page.
 
-```bash
-python manage.py runserver
-```
+## Usage
 
-This will start the app on your local machine at http://localhost:8000.
+To use this project, follow these steps:
 
-### Dependencies
-This app depends on the following Python packages:
-<ul>
-<li>Django
-<li>Django Rest Framework
-<li>Pillow
-</ul>
+1. Clone the repository:
 
-### Usage
+    ```bash
+    git clone https://github.com/vijay/graduation-students-list-2024.git
+    ```
 
-To use the app, you can navigate to http://localhost:8000 in your browser. You should see a list of users.<br>
-You can also create new users by clicking on the "Create User" button.
-# VijayDjangoapp
+2. Navigate to the project directory:
+
+    ```bash
+    cd graduation-students-list-2024
+    ```
+
+3. Open the `index.html` file in a web browser to view the Graduation Students List.
+
+## Installation
+
+No special installation steps are required. Simply clone the repository and open the `index.html` file in a web browser.
+
+## Requirements
+
+- Web browser (Google Chrome, Mozilla Firefox, etc.)
+
