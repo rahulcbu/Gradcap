@@ -32,3 +32,4 @@ This app depends on the following Python packages:
 
 To use the app, you can navigate to http://localhost:8000 in your browser. You should see a list of users.<br>
 You can also create new users by clicking on the "Create User" button.
+# VijayDjangoapp
