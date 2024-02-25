@@ -16,7 +16,7 @@ To use this project, follow these steps:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/vijay/graduation-students-list-2024.git
+    git clone https://github.com/rahulcbu/Gradcap.git
     ```
 
 2. Navigate to the project directory:
