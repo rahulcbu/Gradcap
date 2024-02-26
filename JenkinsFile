@@ -22,8 +22,8 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    // Run Docker container
-                    sh 'docker run -p 80:8001 gradapp:v1'
+                    // Run Docker container and redirect logs to a file
+                    sh 'docker run -p 80:8001 gradapp:v1 > docker_logs.txt 2>&1 &'
                 }
             }
         }
