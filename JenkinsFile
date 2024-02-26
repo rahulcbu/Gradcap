@@ -27,15 +27,11 @@ pipeline {
                 }
             }
         }
-        
-        stage('Push Docker Image to Docker Hub') {
-            steps {
-                script {
-                    // Temporary: Push the Docker image to Docker Hub (commented out)
-                    sh '// Temporary: Pushing the Docker image to Docker Hub'
-                     sh 'docker push cappro/gradapp:v1'
-                }
-            }
+    }
+    
+    post {
+        success {
+            echo 'Pipeline executed successfully!'
         }
     }
 }
