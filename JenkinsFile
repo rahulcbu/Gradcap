@@ -7,7 +7,16 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/rahulcbu/Gradcap.git'
             }
         }
+        
+        stage('Docker Login') {
+            steps {
+                script {
+                    // Docker login command
+                    withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials-id', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                        sh "docker login -u cappro -p admin12345"
+                    }
+                }
+            }
+        }
     }
-
-    // Post-build actions, notifications, etc.
 }
