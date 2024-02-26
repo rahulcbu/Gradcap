@@ -1,43 +1,12 @@
 pipeline {
     agent any
 
-    environment {
-        DOCKER_HUB_USERNAME = 'cappro'
-        DOCKER_HUB_PASSWORD = 'Admin12345'
-        DOCKER_IMAGE_NAME = 'cappro/gradcap'
-    }
-
     stages {
         stage('Checkout Repository') {
             steps {
                 git branch: 'main', url: 'https://github.com/rahulcbu/Gradcap.git'
             }
         }
-
-        stage('Login to Docker Hub') {
-            steps {
-                withCredentials([
-                    usernamePassword(
-                        usernameVariable: 'DOCKER_HUB_USERNAME', 
-                        passwordVariable: 'DOCKER_HUB_PASSWORD', 
-                        username: env.DOCKER_HUB_USERNAME, 
-                        password: env.DOCKER_HUB_PASSWORD
-                    )
-                ]) {
-                    // This block is only used to authenticate and doesn't require any specific action
-                }
-            }
-        }
-
-        stage('Check Docker Processes') {
-            steps {
-                script {
-                    sh 'docker ps'
-                }
-            }
-        }
-
-        // Additional stages for build, push, and run Docker container can be added here
     }
 
     // Post-build actions, notifications, etc.
