@@ -16,7 +16,14 @@ pipeline {
 
         stage('Login to Docker Hub') {
             steps {
-                withCredentials([usernamePassword(credentialsId: '', usernameVariable: 'DOCKER_HUB_USERNAME', passwordVariable: 'DOCKER_HUB_PASSWORD')]) {
+                withCredentials([
+                    usernamePassword(
+                        usernameVariable: 'DOCKER_HUB_USERNAME', 
+                        passwordVariable: 'DOCKER_HUB_PASSWORD', 
+                        username: env.DOCKER_HUB_USERNAME, 
+                        password: env.DOCKER_HUB_PASSWORD
+                    )
+                ]) {
                     // This block is only used to authenticate and doesn't require any specific action
                 }
             }
