@@ -19,16 +19,15 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Run Docker Container') {
             steps {
                 script {
-                    // Temporary: Build the Docker image (commented out)
-                    sh '// Temporary: Building the Docker image'
-                    // sh 'docker build -t cappro/gradapp:v1 .'
+                    // Run Docker container
+                    sh 'docker run -p 80:8001 gradapp:v1'
                 }
             }
         }
-
+        
         stage('Push Docker Image to Docker Hub') {
             steps {
                 script {
