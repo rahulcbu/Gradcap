@@ -2,7 +2,8 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_HUB_CREDENTIALS = credentials('docker-hub-credentials-id')
+        DOCKER_HUB_USERNAME = 'cappro'
+        DOCKER_HUB_PASSWORD = 'Admin12345'
         DOCKER_IMAGE_NAME = 'cappro/gradcap'
     }
 
@@ -15,18 +16,17 @@ pipeline {
 
         stage('Login to Docker Hub') {
             steps {
-                script {
-                    // Login to Docker Hub using provided credentials
-                    docker.withRegistry('', env.DOCKER_HUB_CREDENTIALS) {
-                        // This block is only used to authenticate and doesn't require any specific action
-                    }
+                withCredentials([usernamePassword(credentialsId: '', usernameVariable: 'DOCKER_HUB_USERNAME', passwordVariable: 'DOCKER_HUB_PASSWORD')]) {
+                    // This block is only used to authenticate and doesn't require any specific action
                 }
             }
         }
 
         stage('Check Docker Processes') {
             steps {
-                sh 'docker ps'
+                script {
+                    sh 'docker ps'
+                }
             }
         }
 
