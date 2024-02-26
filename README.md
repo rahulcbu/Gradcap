@@ -1,4 +1,4 @@
-# Graduation Students List 2024
+#  CBU Graduation Students List 2024
 
 Welcome to the Graduation Students List 2024 project! This project displays a list of graduation students along with their details in an aesthetically pleasing way.
 
